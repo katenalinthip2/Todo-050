@@ -59,7 +59,7 @@ function App() {
     <div className="App-header"  >
       <h1 > Todo Work do you want </h1>
       <input  type="text" name="name" onChange={(e) => setName(e.target.value)} />
-      <button  onClick={addTask}> Submit </button>
+      <button style={{ backgroundColor: 'pink' }} onClick={addTask}> Submit </button>
       <ul style={{ display: 'flex', listStyle: 'none'}}>{renderTask()}</ul>
 
     </div>
