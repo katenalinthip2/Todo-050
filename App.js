@@ -3,6 +3,7 @@ import './App.css';
 import { firestore } from './index'
 import Task from './Task'
 
+
 function App() {
   const [tasks, setTasks] = useState([
     { id: 1, name: "do homework" },
@@ -55,10 +56,10 @@ function App() {
   
 
   return (
-    <div >
-      <h1> Todo </h1>
-      <input type="text" name="name" onChange={(e) => setName(e.target.value)} />
-      <button onClick={addTask}> Submit </button>
+    <div className="App-header"  >
+      <h1 > Todo Work do you want </h1>
+      <input  type="text" name="name" onChange={(e) => setName(e.target.value)} />
+      <button  onClick={addTask}> Submit </button>
       <ul style={{ display: 'flex', listStyle: 'none'}}>{renderTask()}</ul>
 
     </div>
