@@ -26,6 +26,12 @@ function App() {
       setTasks(myTask)
     })
   }
+
+  const addTask = () => {
+    let id = (tasks.length === 0) ? 1 : tasks[tasks.length - 1].id + 1
+    firestore.collection("tasks").doc(id + '').set({ id, name })
+}
+
   const deleteTask = (id) => {
     firestore.collection("tasks").doc(id + '').delete()
   }
@@ -46,10 +52,7 @@ function App() {
     else
       return (<li> No Task </li>)
   }
-  const addTask = async => {
-    let id = (tasks.length === 0) ? 1 : tasks[tasks.length - 1].id + 1
-    firestore.collection("tasks").doc(id + '').set({ id, name })
-  }
+  
 
   return (
     <div >
